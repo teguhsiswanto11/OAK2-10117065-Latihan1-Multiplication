@@ -8,13 +8,15 @@ public class Main {
         Scanner scn2 = new Scanner(System.in);
         Operation operation = new Operation();
 
-//        System.out.print("Masukkan Nilai 1 : ");
-//        x = scn1.nextInt();
-//        System.out.print("Masukkan Nilai 2 : ");
-//        y = scn2.nextInt();
+        System.out.println("===== MULTIPLICATION (Positif) ======");
+        System.out.print("Masukkan Nilai 1 : ");
+        x = scn1.nextInt();
+        System.out.print("Masukkan Nilai 2 : ");
+        y = scn2.nextInt();
 
-        System.out.println("Hasil : "+operation.multiplication(10,7));
-//        System.out.println(operation.getBasic());
+        System.out.println("\n\nC     A       Q       M      info   Count");
+        System.out.println("-----------------------------------------");
+        System.out.println("\nRESULT = "+operation.multiplication(x,y));
 
     }
 }

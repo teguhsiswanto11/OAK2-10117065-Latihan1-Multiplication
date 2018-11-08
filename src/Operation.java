@@ -1,10 +1,9 @@
+import javax.xml.bind.SchemaOutputResolver;
+
 public class Operation {
-    private int basic;
+    private int basic; // menyimpan basis/digit terbesar yang dipakai
 
-    public int getBasic() {
-        return basic;
-    }
-
+//    fungsi menset basis terbesar dari dua variabel
     public int basis(int m, int q) {
         int con1 = 1;
         if (m <= 3) {con1=2;}
@@ -28,12 +27,14 @@ public class Operation {
 
         return this.basic = Math.max(con1,con2);}
 
+//    mengecek apakah multiplier pada digit ke-0 sama dengan 1 (Q0 == 1)
     public int checkMultiplier0(String x){
         int totalDigit = x.length();
         char q0 = x.charAt(totalDigit-1);
         int y = Character.getNumericValue(q0);
         return y;}
 
+//        konversi desimal ke biner (untuk basis bukan gabungan)
     public String decToBit(int y) {
         String x = "";
         String nol = "";
@@ -50,6 +51,7 @@ public class Operation {
         }
         return nol+x;}
 
+//        konversi biner ke desimal (untuk basis bukan gabungan)
     public int bitToDec(String x) {
         double hasil = 0;
         int pow = x.length()-1;
@@ -61,12 +63,13 @@ public class Operation {
         int hasilInt = (int) hasil;
         return hasilInt;}
 
-
+//      menggabungkan dua variabel dalam satu String (dalam bentuk biner)
     public String mergeCAQ(int a, int q) {
         String shift = decToBit(a)+decToBit(q);
         return shift;}
 
-    public String parseAll(int y, int basis) {
+//      menguraikan bilangan desimal ke biner (untuk basis gabungan)
+    public String parseToBit(int y, int basis) {
         String x = "";
         String nol = "";
 
@@ -82,29 +85,44 @@ public class Operation {
         }
         return nol+x;}
 
+//        proses perkalian menggunakan algoritma penjumlahan biner (untuk bilangan positif)
     public int multiplication(int m, int q) {
         basis(m, q);
         int count = basic;
+        int koun = basic-1; // untuk skema count
         int a = 0;
 
         while (count != 0) {
             if (checkMultiplier0(decToBit(q)) == 1) {
                 a +=  m;
+
+            //untuk skema
+                String dtb = decToBit(a);
+                if (dtb.length() > 4) {
+                    System.out.println(dtb.substring(0,1)+"   "+dtb.substring(1, 5)+"                      add");
+                } else {
+                    System.out.println("0"+"   "+dtb);
+                }
             }
             String merge = mergeCAQ(a, q);
-            int angka = bitToDec(merge);
-            System.out.println("sebelum : "+merge.substring(0, basic)+merge.substring(basic, basic*2));
-            angka = angka >> 1;
-            String parse = parseAll(angka, basic*2);
+            int hasilMerge = bitToDec(merge);
+//            System.out.println("sebelum : "+merge.substring(0, basic)+merge.substring(basic, basic*2));
+            hasilMerge = hasilMerge >> 1;
+            String parse = parseToBit(hasilMerge, basic*2);
             String parseA = parse.substring(0, basic);
             String parseQ = parse.substring(basic, basic*2);
-            System.out.println("setelah : "+parseA+parseQ);
+
+            //untuk skema
+//            koun -= 1;
+            System.out.println("0   "+parseA+"    "+parseQ+"    "+decToBit(m)+"    shift    "+koun--);
+            System.out.println(count == 1 ?"-----------------------------------------":"    ----+");
 
             a = bitToDec(parseA);
             q = bitToDec(parseQ);
 
-//            a = a >> 1;
-//            System.out.println(a);
+            // untuk skema
+            System.out.print(count == 1 ?"Biner A.Q = "+mergeCAQ(a,q)+"\n":"");
+
         count--;
         }
 
