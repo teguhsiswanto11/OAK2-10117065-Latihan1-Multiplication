@@ -92,6 +92,8 @@ public class Operation {
         int koun = basic-1; // untuk skema count
         int a = 0;
 
+        System.out.println("\n\nC     A       Q       M      info   Count:"+count);
+        System.out.println("--------------------------------------------");
         while (count != 0) {
             if (checkMultiplier0(decToBit(q)) == 1) {
                 a +=  m;
@@ -115,7 +117,7 @@ public class Operation {
             //untuk skema
 //            koun -= 1;
             System.out.println("0   "+parseA+"    "+parseQ+"    "+decToBit(m)+"    shift    "+koun--);
-            System.out.println(count == 1 ?"-----------------------------------------":"    ----+");
+            System.out.println(count == 1 ?"--------------------------------------------":"    ----+");
 
             a = bitToDec(parseA);
             q = bitToDec(parseQ);
