@@ -94,16 +94,24 @@ public class Operation {
 
         System.out.println("\n\nC     A       Q       M      info   Count:"+count);
         System.out.println("--------------------------------------------");
+        System.out.print("0   ");
+        for (int i = 0; i < basic; i++) {
+            System.out.print("0");
+        }
+        System.out.println("    "+decToBit(q)+"    "+decToBit(m));
+        System.out.println("0   "+decToBit(m));
+        System.out.println("    ----+");
+
         while (count != 0) {
             if (checkMultiplier0(decToBit(q)) == 1) {
                 a +=  m;
 
             //untuk skema
                 String dtb = decToBit(a);
-                if (dtb.length() > 4) {
-                    System.out.println(dtb.substring(0,1)+"   "+dtb.substring(1, 5)+"                      add");
+                if (dtb.length() > basic) {
+                    System.out.println(dtb.substring(0,1)+"   "+dtb.substring(1, dtb.length())+"                      add");
                 } else {
-                    System.out.println("0"+"   "+dtb);
+                    System.out.println("0"+"   "+dtb+"                      add");
                 }
             }
             String merge = mergeCAQ(a, q);
@@ -116,8 +124,10 @@ public class Operation {
 
             //untuk skema
 //            koun -= 1;
-            System.out.println("0   "+parseA+"    "+parseQ+"    "+decToBit(m)+"    shift    "+koun--);
-            System.out.println(count == 1 ?"--------------------------------------------":"    ----+");
+            System.out.println("0   "+parseA+"    "+parseQ+"    "+decToBit(m)+"    shift     "+koun--);
+            System.out.println((checkMultiplier0(parseQ) == 1)?"0   "+decToBit(m):"");
+            System.out.println((checkMultiplier0(parseQ) == 1)?"    -----+":"");
+            System.out.print(count == 1 ?"--------------------------------------------\n":"");
 
             a = bitToDec(parseA);
             q = bitToDec(parseQ);
