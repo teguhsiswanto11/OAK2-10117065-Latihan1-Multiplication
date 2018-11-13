@@ -1,5 +1,13 @@
 import java.util.Scanner;
-
+/**
+ * @author
+ * NAMA     : Teguh Siswanto
+ * KELAS    : OAK2
+ * NIM      : 10117065
+ * Deskripsi Program : Menghitung perkalian menggunakan algoritma penjumlahan biner
+ * dengan skema pemrosesannya
+ *
+ */
 public class Main {
     public static void main(String[] args) {
         int x;
@@ -24,6 +32,7 @@ public class Main {
             lagi = scn3.next().charAt(0);
             System.out.println();
         } while (lagi == 'y');
-
+        System.out.println("TERIMA KASIH :) ");
+        System.out.println("Developed by : Teguh Siswanto) ");
     }
 }

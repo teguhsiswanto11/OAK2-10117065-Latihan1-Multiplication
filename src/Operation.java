@@ -1,5 +1,3 @@
-import javax.xml.bind.SchemaOutputResolver;
-
 public class Operation {
     private int basic; // menyimpan basis/digit terbesar yang dipakai
 
@@ -92,6 +90,7 @@ public class Operation {
         int koun = basic-1; // untuk skema count
         int a = 0;
 
+        // untuk skema
         System.out.println("\n\nC     A       Q       M      info   Count:"+count);
         System.out.println("--------------------------------------------");
         System.out.print("0   ");
