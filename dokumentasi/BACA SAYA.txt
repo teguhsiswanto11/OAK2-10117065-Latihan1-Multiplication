@@ -1,0 +1,27 @@
+Dokumentasi program Multiplication
+
+-Deskripsi program: 
+Program dibuat menggunakan bahasa Java, file utama berada di 'scr/Main.java' 
+dan file proses berada di 'src/Operation.java'
+
+-Konsep Program:
+konsep yag diterapkan menggunakan algoritma Multiplication yang telah diberikan oleh 
+dosen Organisasi Arsitektur Komputer (OAK) yaitu Edy Mulyana M.T. Konsep tersebut 
+menghitung perkalian dengan cara penjumlahan biner.
+
+-Petunjuk penggunaan:
+1. Extract folder OAK2-10117065-Tugas1-Multiplication
+2. Pindahkan hasil extract tersebut ke folder project IDE java, bisa menggunakan Netbeans atau IntelliJ IDEA
+3. Buka IDE yang digunakan
+4. Buat project baru menggunakan project yang sudah ada(yang baru dipindahkan //seperti langkah 2)
+5. Setelah berhasil menambahkan project maka run pada IDE tersebut
+
+-Hasil Screenshot program:
+Berada di folder 'dokumentasi/'
+
+-Repositori di internet:
+Project ini juga di upload ke Github.com dengan link sebagai berikut:
+https://github.com/teguhsiswanto11/OAK2-10117065-Latihan1-Multiplication
+
+
+Terima Kasih
